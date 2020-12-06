@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>International Space Station Location API</title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+      integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+      crossorigin=""
+    />
+    <script
+      src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+      integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+      crossorigin=""
+    ></script>
+    <style>
+      #issMap {
+        height: 380px;
+      }
+      table{
+        width: 100%;
+      }
+      body{
+        background-color: aliceblue;
+        color: cornflowerblue;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>International Space Station Live Location</h1>
+    <p>
+      <table>
+        <tr>
+          <td>Latitude: <span id="lat"></span>°</td>
+          <td>Longitude: <span id="lon"></span>°</td>
+          <td>Altitude: <span id="alt"></span> km</td>
+          <td>Velocity: <span id="vel"></span> km/h</td>
+        </tr>
+      </table>
+      
+      
+    </p>
+
+    <hr />
+    <div id="issMap"></div>
+    <script src="sketch.js"></script>
+
+    <h5>Made Fresh By: Shehraan Rathee</h5>
+  </body>
+</html>
