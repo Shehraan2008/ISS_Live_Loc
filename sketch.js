@@ -33,7 +33,11 @@ async function getISS() {
   // placing the marker
   marker.setLatLng([latitude, longitude]);
   // changing the view
-  mymap.setView([latitude, longitude], zoom);
+  let zoomNum = true;
+  if (zoomNum == true){
+    mymap.setView([latitude, longitude], zoom);
+    zoomNum = false;
+  }
 
   // mkaing a circle
   // adding a circel on my iss
@@ -49,6 +53,7 @@ async function getISS() {
   document.getElementById("alt").textContent = altitude.toFixed(2);
   document.getElementById("vel").textContent = velocity.toFixed(2);
 }
+
 
 // excuting the function
 setInterval(getISS, 1000);
