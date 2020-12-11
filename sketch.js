@@ -28,14 +28,14 @@ async function getISS() {
   const response = await fetch(url);
   const data = await response.json();
   const { latitude, longitude, altitude, velocity } = data;
-  const zoom = altitude / 100;
+  let zoomNum = true;
+  //const zoom = altitude / 100;
 
   // placing the marker
   marker.setLatLng([latitude, longitude]);
   // changing the view
-  let zoomNum = true;
-  if (zoomNum == true){
-    mymap.setView([latitude, longitude], zoom);
+  if (zoomNum) {
+    mymap.setView([latitude, longitude], 4);
     zoomNum = false;
   }
 
@@ -53,7 +53,6 @@ async function getISS() {
   document.getElementById("alt").textContent = altitude.toFixed(2);
   document.getElementById("vel").textContent = velocity.toFixed(2);
 }
-
 
 // excuting the function
 setInterval(getISS, 1000);
